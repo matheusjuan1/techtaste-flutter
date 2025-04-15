@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:techtaste/data/categories_data.dart';
+import 'package:techtaste/domain/data/categories_data.dart';
+import 'package:techtaste/domain/data/restaurant_data.dart';
+import 'package:techtaste/domain/model/restaurant.dart';
 import 'package:techtaste/ui/home/widgets/category_widget.dart';
+import 'package:techtaste/ui/home/widgets/restaurant_widget.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    RestaurantData restaurantData = Provider.of<RestaurantData>(context);
+
     return Scaffold(
       drawer: Drawer(),
       appBar: AppBar(
@@ -39,6 +45,15 @@ class HomeScreen extends StatelessWidget {
               ),
               Image.asset('assets/banners/banner_promo.png'),
               Text("Bem avaliados"),
+              Column(
+                spacing: 12.0,
+                children: List.generate(restaurantData.restaurants.length, (
+                  index,
+                ) {
+                  Restaurant restaurant = restaurantData.restaurants[index];
+                  return RestaurantWidget(restaurant: restaurant);
+                }),
+              ),
               SizedBox(height: 64.0),
             ],
           ),
