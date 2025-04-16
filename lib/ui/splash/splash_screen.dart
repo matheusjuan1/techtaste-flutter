@@ -19,7 +19,9 @@ class SplashScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 spacing: 32.0,
                 children: [
+                  Spacer(),
                   Image.asset('assets/logo.png', width: 192),
+                  SizedBox(height: 24.0),
                   Column(
                     children: [
                       Text(
@@ -55,6 +57,7 @@ class SplashScreen extends StatelessWidget {
                       ),
                     ),
                   ),
+                  SizedBox(height: 24.0),
                 ],
               ),
             ),

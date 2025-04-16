@@ -3,6 +3,7 @@ import 'package:techtaste/domain/data/categories_data.dart';
 import 'package:techtaste/domain/data/restaurant_data.dart';
 import 'package:techtaste/domain/model/restaurant.dart';
 import 'package:techtaste/ui/_core/widgets/appbar.dart';
+import 'package:techtaste/ui/_core/widgets/outlined_text_field.dart';
 import 'package:techtaste/ui/home/widgets/category_widget.dart';
 import 'package:techtaste/ui/home/widgets/restaurant_widget.dart';
 import 'package:provider/provider.dart';
@@ -22,12 +23,18 @@ class HomeScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            spacing: 32.0,
+            spacing: 24.0,
             children: [
               Center(child: Image.asset('assets/logo.png', width: 147)),
-              Text("Boas-vindas!"),
-              TextFormField(),
-              Text("Escolha por categoria"),
+              Text(
+                "Boas-vindas!",
+                style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.bold),
+              ),
+              OutlinedTextField(
+                label: "O que você quer para hoje?",
+                prefixIcon: Icons.search,
+              ),
+              Text("Escolha por categoria", style: TextStyle(fontSize: 22.0)),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -43,7 +50,10 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               Image.asset('assets/banners/banner_promo.png'),
-              Text("Bem avaliados"),
+              Text(
+                "Bem avaliados",
+                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),
+              ),
               Column(
                 spacing: 12.0,
                 children: List.generate(restaurantData.restaurants.length, (
@@ -53,7 +63,7 @@ class HomeScreen extends StatelessWidget {
                   return RestaurantWidget(restaurant: restaurant);
                 }),
               ),
-              SizedBox(height: 52.0),
+              SizedBox(height: 32.0),
             ],
           ),
         ),
