@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:techtaste/domain/model/dish.dart';
 import 'package:techtaste/domain/model/restaurant.dart';
+import 'package:techtaste/ui/_core/bag_provider.dart';
+import 'package:techtaste/ui/_core/widgets/appbar.dart';
+import 'package:provider/provider.dart';
 
 class RestaurantScreen extends StatelessWidget {
   final Restaurant restaurant;
@@ -9,13 +12,14 @@ class RestaurantScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(restaurant.name)),
+      appBar: getAppBar(context: context, title: restaurant.name),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           spacing: 12.0,
           children: [
+            SizedBox(height: 16.0),
             Center(
               child: Image.asset('assets/${restaurant.imagePath}', width: 112),
             ),
@@ -30,7 +34,12 @@ class RestaurantScreen extends StatelessWidget {
                   leading: Image.asset('assets/dishes/default.png', width: 48),
                   title: Text(dish.name),
                   subtitle: Text("R\$${dish.price.toStringAsFixed(2)}"),
-                  trailing: IconButton(onPressed: () {}, icon: Icon(Icons.add)),
+                  trailing: IconButton(
+                    onPressed: () {
+                      context.read<BagProvider>().addAllDishes([dish]);
+                    },
+                    icon: Icon(Icons.add),
+                  ),
                 );
               }),
             ),
