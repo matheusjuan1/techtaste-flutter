@@ -16,7 +16,9 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       drawer: Drawer(),
       appBar: AppBar(
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.search))],
+        actions: [
+          IconButton(onPressed: () {}, icon: Icon(Icons.shopping_cart)),
+        ],
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
