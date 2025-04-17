@@ -6,6 +6,7 @@ import 'package:techtaste/ui/_core/widgets/appbar.dart';
 import 'package:techtaste/ui/_core/widgets/outlined_text_field.dart';
 import 'package:techtaste/ui/home/widgets/category_widget.dart';
 import 'package:techtaste/ui/home/widgets/restaurant_widget.dart';
+import 'package:techtaste/ui/restaurant/restaurant_screen.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -20,52 +21,70 @@ class HomeScreen extends StatelessWidget {
       appBar: getAppBar(context: context),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            spacing: 24.0,
-            children: [
-              Center(child: Image.asset('assets/logo.png', width: 147)),
-              Text(
-                "Boas-vindas!",
-                style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.bold),
-              ),
-              OutlinedTextField(
-                label: "O que você quer para hoje?",
-                prefixIcon: Icons.search,
-              ),
-              Text("Escolha por categoria", style: TextStyle(fontSize: 22.0)),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  spacing: 8.0,
-                  children: List.generate(
-                    CategoriesData.listCategories.length,
-                    (index) {
-                      return CategoryWidget(
-                        category: CategoriesData.listCategories[index],
-                      );
-                    },
-                  ),
-                ),
-              ),
-              Image.asset('assets/banners/banner_promo.png'),
-              Text(
-                "Bem avaliados",
-                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),
-              ),
-              Column(
-                spacing: 12.0,
-                children: List.generate(restaurantData.restaurants.length, (
+        child: ListView(
+          padding: EdgeInsets.only(bottom: 24.0),
+          children: [
+            Center(child: Image.asset('assets/logo.png', width: 147)),
+            SizedBox(height: 24.0),
+            Text(
+              "Boas-vindas!",
+              style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 16.0),
+            OutlinedTextField(
+              label: "O que você quer para hoje?",
+              prefixIcon: Icons.search,
+            ),
+            SizedBox(height: 24.0),
+            Text("Escolha por categoria", style: TextStyle(fontSize: 22.0)),
+            SizedBox(height: 16.0),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: List.generate(CategoriesData.listCategories.length, (
                   index,
                 ) {
-                  Restaurant restaurant = restaurantData.restaurants[index];
-                  return RestaurantWidget(restaurant: restaurant);
+                  return Padding(
+                    padding: const EdgeInsets.only(right: 8.0),
+                    child: CategoryWidget(
+                      category: CategoriesData.listCategories[index],
+                    ),
+                  );
                 }),
               ),
-              SizedBox(height: 32.0),
-            ],
-          ),
+            ),
+            SizedBox(height: 24.0),
+            Image.asset('assets/banners/banner_promo.png'),
+            SizedBox(height: 24.0),
+            Text(
+              "Bem avaliados",
+              style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),
+            ),
+            SizedBox(height: 16.0),
+            ListView.separated(
+              shrinkWrap: true,
+              physics:
+                  NeverScrollableScrollPhysics(), // desabilita scroll interno
+              itemCount: restaurantData.restaurants.length,
+              separatorBuilder: (context, index) => SizedBox(height: 12.0),
+              itemBuilder: (context, index) {
+                Restaurant restaurant = restaurantData.restaurants[index];
+                return RestaurantWidget(
+                  restaurant: restaurant,
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder:
+                            (context) =>
+                                RestaurantScreen(restaurant: restaurant),
+                      ),
+                    );
+                  },
+                );
+              },
+            ),
+          ],
         ),
       ),
     );

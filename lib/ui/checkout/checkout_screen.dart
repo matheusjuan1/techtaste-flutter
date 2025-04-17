@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:techtaste/domain/model/dish.dart';
 import 'package:techtaste/ui/_core/app_colors.dart';
 import 'package:techtaste/ui/_core/bag_provider.dart';
+import 'package:techtaste/ui/_core/widgets/quantity_selector.dart';
 import 'package:provider/provider.dart';
 
 class CheckoutScreen extends StatelessWidget {
@@ -45,29 +46,10 @@ class CheckoutScreen extends StatelessWidget {
                       ),
                       title: Text(dish.name),
                       subtitle: Text("R\$${dish.price.toStringAsFixed(2)}"),
-                      trailing: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          IconButton(
-                            onPressed: () {
-                              bagProvider.removeFromBag(dish);
-                            },
-                            icon: Icon(Icons.remove),
-                          ),
-                          Text(
-                            bagProvider.getMapByAmount()[dish].toString(),
-                            style: TextStyle(
-                              fontSize: 14.0,
-                              color: AppColors.lightMainColor,
-                            ),
-                          ),
-                          IconButton(
-                            onPressed: () {
-                              bagProvider.addToBag(dish);
-                            },
-                            icon: Icon(Icons.add),
-                          ),
-                        ],
+                      trailing: QuantitySelector(
+                        quantity: bagProvider.getMapByAmount()[dish] ?? 0,
+                        onAdd: () => bagProvider.addToBag(dish),
+                        onRemove: () => bagProvider.removeFromBag(dish),
                       ),
                     );
                   },

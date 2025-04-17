@@ -1,24 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:techtaste/domain/model/restaurant.dart';
-import 'package:techtaste/ui/restaurant/restaurant_screen.dart';
 
 class RestaurantWidget extends StatelessWidget {
   final Restaurant restaurant;
-  const RestaurantWidget({super.key, required this.restaurant});
+  final VoidCallback onTap;
+  const RestaurantWidget({
+    super.key,
+    required this.restaurant,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) {
-              return RestaurantScreen(restaurant: restaurant);
-            },
-          ),
-        );
-      },
+      onTap: onTap,
       child: Row(
         spacing: 12.0,
         children: [
