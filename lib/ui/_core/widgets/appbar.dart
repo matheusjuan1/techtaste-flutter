@@ -6,32 +6,44 @@ import 'package:provider/provider.dart';
 import 'package:badges/badges.dart' as badges;
 
 AppBar getAppBar({required BuildContext context, String? title}) {
-  BagProvider bagProvider = Provider.of<BagProvider>(context);
   return AppBar(
     title: title != null ? Text(title) : null,
     centerTitle: true,
     actions: [
-      badges.Badge(
-        showBadge: bagProvider.dishesOnBag.isNotEmpty,
-        position: badges.BadgePosition.topEnd(top: 8, end: 5),
-        badgeContent: Text(
-          bagProvider.dishesOnBag.length.toString(),
-          style: TextStyle(fontSize: 10, color: AppColors.backgroundColor),
-        ),
-        badgeStyle: badges.BadgeStyle(badgeColor: AppColors.mainColor),
-        child: IconButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) {
-                  return CheckoutScreen();
-                },
+      Consumer<BagProvider>(
+        builder: (context, bagProvider, child) {
+          return badges.Badge(
+            showBadge: bagProvider.dishesOnBag.isNotEmpty,
+            position: badges.BadgePosition.topEnd(top: 2, end: 3),
+            badgeStyle: badges.BadgeStyle(
+              badgeColor: AppColors.mainColor,
+              padding: EdgeInsets.all(6),
+            ),
+            badgeContent: AnimatedSwitcher(
+              duration: Duration(milliseconds: 150),
+              transitionBuilder:
+                  (child, animation) =>
+                      ScaleTransition(scale: animation, child: child),
+              child: Text(
+                bagProvider.dishesOnBag.length.toString(),
+                key: ValueKey(bagProvider.dishesOnBag.length),
+                style: TextStyle(
+                  fontSize: 10,
+                  color: AppColors.backgroundColor,
+                ),
               ),
-            );
-          },
-          icon: Icon(Icons.shopping_basket),
-        ),
+            ),
+            child: IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CheckoutScreen()),
+                );
+              },
+              icon: Icon(Icons.shopping_basket),
+            ),
+          );
+        },
       ),
     ],
   );
