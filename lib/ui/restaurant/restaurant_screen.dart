@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:techtaste/domain/model/restaurant.dart';
 import 'package:techtaste/ui/_core/app_colors.dart';
-import 'package:techtaste/ui/_core/bag_provider.dart';
+import 'package:techtaste/ui/_core/utils/bottom_sheet_utils.dart';
 import 'package:techtaste/ui/_core/widgets/appbar.dart';
 import 'package:techtaste/ui/restaurant/widgets/dish_widget.dart';
-import 'package:provider/provider.dart';
 
 class RestaurantScreen extends StatelessWidget {
   final Restaurant restaurant;
@@ -82,8 +81,15 @@ class RestaurantScreen extends StatelessWidget {
               final dish = restaurant.dishes[index];
               return DishWidget(
                 dish: dish,
-                onPressed: () {
-                  context.read<BagProvider>().addAllDishes([dish]);
+                onTap: () {
+                  showImageBottomSheet(
+                    context: context,
+                    imagePath: 'assets/dishes/default.png',
+                    title: dish.name,
+                    subtitle:
+                        "R\$${dish.price.toStringAsFixed(2).replaceAll(".", ",")}",
+                    description: dish.description,
+                  );
                 },
               );
             },
