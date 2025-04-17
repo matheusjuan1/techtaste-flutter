@@ -31,7 +31,7 @@ class RestaurantWidget extends StatelessWidget {
                   return Image.asset('assets/others/star.png');
                 }),
               ),
-              Text("${restaurant.distance}km"),
+              Text("${restaurant.distance} Km"),
             ],
           ),
         ],
