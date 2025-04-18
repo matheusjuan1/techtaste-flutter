@@ -41,14 +41,14 @@ Veja algumas capturas de tela do aplicativo em funcionamento no Android. A vers�
 <details>
   <summary><strong>Ver capturas de tela Android</strong></summary>
   <div align="center">
-    <h3>SplashScreen</h3>
+    <h4>SplashScreen</h4>
     <img src="https://github.com/user-attachments/assets/d513c74f-365f-4ff6-8e05-0aab4e733dc9" width="150" style="margin: 10px;" />
-    <h3>Restaurantes e Cardápio</h3>
+    <h4>Restaurantes e Cardápio</h4>
     <img src="https://github.com/user-attachments/assets/b3c5c10a-c25d-4aa6-a307-2f869a5e4906" width="150" style="margin: 10px;" />
     <img src="https://github.com/user-attachments/assets/7d908609-ff3b-42c2-8189-f1856430c6dd" width="150" style="margin: 10px;" />
     <img src="https://github.com/user-attachments/assets/b0cdde29-d64e-492e-a0c8-94f191d69609" width="150" style="margin: 10px;" />
     <img src="https://github.com/user-attachments/assets/6cfc6d27-50c4-40a2-8dd5-72e45a14d648" width="150" style="margin: 10px;" />
-    <h3>Sacola (Checkout)</h3>
+    <h4>Sacola (Checkout)</h4>
     <img src="https://github.com/user-attachments/assets/64807a01-d3e3-4757-8699-9859c9aa246d" width="150" style="margin: 10px;" />  
     <img src="https://github.com/user-attachments/assets/1cdc8985-41d8-4bb9-a5e5-515baade9930" width="150" style="margin: 10px;" />
     <img src="https://github.com/user-attachments/assets/16a0c211-07a8-40bc-8bef-c1080a75ee40" width="150" style="margin: 10px;" />
