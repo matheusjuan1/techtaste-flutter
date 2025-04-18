@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:techtaste/domain/model/restaurant.dart';
 import 'package:techtaste/ui/_core/app_colors.dart';
 import 'package:techtaste/ui/_core/utils/bottom_sheet_utils.dart';
@@ -69,7 +70,7 @@ class RestaurantScreen extends StatelessWidget {
           ),
           SizedBox(height: 24),
           Text(
-            "Mais pedidos",
+            AppLocalizations.of(context)!.mostOrdered,
             style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16.0),
           ),
           SizedBox(height: 12.0),

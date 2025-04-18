@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:techtaste/domain/data/categories_data.dart';
 import 'package:techtaste/domain/data/restaurant_data.dart';
 import 'package:techtaste/domain/model/restaurant.dart';
@@ -27,16 +28,19 @@ class HomeScreen extends StatelessWidget {
             Center(child: Image.asset('assets/logo.png', width: 147)),
             SizedBox(height: 24.0),
             Text(
-              "Boas-vindas!",
+              AppLocalizations.of(context)!.welcome,
               style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 16.0),
             OutlinedTextField(
-              label: "O que você quer para hoje?",
+              label: AppLocalizations.of(context)!.searchHomeMessage,
               prefixIcon: Icons.search,
             ),
             SizedBox(height: 24.0),
-            Text("Escolha por categoria", style: TextStyle(fontSize: 22.0)),
+            Text(
+              AppLocalizations.of(context)!.chooseByCategory,
+              style: TextStyle(fontSize: 22.0),
+            ),
             SizedBox(height: 16.0),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -57,7 +61,7 @@ class HomeScreen extends StatelessWidget {
             Image.asset('assets/banners/banner_promo.png'),
             SizedBox(height: 24.0),
             Text(
-              "Bem avaliados",
+              AppLocalizations.of(context)!.topRated,
               style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),
             ),
             SizedBox(height: 16.0),

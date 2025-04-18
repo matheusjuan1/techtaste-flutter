@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:techtaste/ui/_core/app_colors.dart';
 import 'package:techtaste/ui/home/home_screen.dart';
 
@@ -25,11 +26,11 @@ class SplashScreen extends StatelessWidget {
                   Column(
                     children: [
                       Text(
-                        "Um parceiro inovador para sua",
+                        AppLocalizations.of(context)!.splashTextOne,
                         style: TextStyle(color: Colors.white, fontSize: 22.0),
                       ),
                       Text(
-                        "melhor experiência culinária!",
+                        AppLocalizations.of(context)!.splashTextTwo,
                         style: TextStyle(
                           color: AppColors.mainColor,
                           fontSize: 22.0,
@@ -52,7 +53,7 @@ class SplashScreen extends StatelessWidget {
                         );
                       },
                       child: Text(
-                        "Bora!",
+                        AppLocalizations.of(context)!.letsGo,
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),

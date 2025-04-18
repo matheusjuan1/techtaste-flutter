@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:techtaste/domain/model/address.dart';
 import 'package:techtaste/domain/model/dish.dart';
 import 'package:techtaste/domain/model/payment_method.dart';
@@ -37,14 +38,17 @@ class CheckoutScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Sacola"),
+        title: Text(AppLocalizations.of(context)!.bag),
         centerTitle: true,
         actions: [
           TextButton(
             onPressed: () {
               bagProvider.clearBag();
             },
-            child: Text("Limpar", style: TextStyle(color: AppColors.mainColor)),
+            child: Text(
+              AppLocalizations.of(context)!.clear,
+              style: TextStyle(color: AppColors.mainColor),
+            ),
           ),
         ],
       ),
@@ -52,7 +56,7 @@ class CheckoutScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         children: [
           Text(
-            "Pedido",
+            AppLocalizations.of(context)!.order,
             textAlign: TextAlign.start,
             style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16.0),
           ),
@@ -61,7 +65,7 @@ class CheckoutScreen extends StatelessWidget {
               ? Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
-                  "Você não possui itens na sacola!",
+                  AppLocalizations.of(context)!.emptyBagMessage,
                   textAlign: TextAlign.center,
                   style: TextStyle(color: Colors.grey),
                 ),
@@ -90,7 +94,7 @@ class CheckoutScreen extends StatelessWidget {
               ),
           SizedBox(height: 24.0),
           Text(
-            "Pagamento",
+            AppLocalizations.of(context)!.payment,
             style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16.0),
           ),
           SizedBox(height: 16.0),
@@ -102,7 +106,7 @@ class CheckoutScreen extends StatelessWidget {
           ),
           SizedBox(height: 24.0),
           Text(
-            "Entregar no endereço",
+            AppLocalizations.of(context)!.deliverToAddress,
             style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16.0),
           ),
           SizedBox(height: 16.0),
@@ -114,7 +118,7 @@ class CheckoutScreen extends StatelessWidget {
           ),
           SizedBox(height: 24.0),
           Text(
-            "Confirmar",
+            AppLocalizations.of(context)!.confirm,
             style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16.0),
           ),
           SizedBox(height: 16.0),
@@ -131,7 +135,7 @@ class CheckoutScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Pedido:"),
+                      Text(AppLocalizations.of(context)!.order_),
                       Text(
                         "R\$ ${bagProvider.getTotal().toStringAsFixed(2).replaceAll(".", ",")}",
                         style: TextStyle(color: AppColors.lightMainColor),
@@ -141,7 +145,7 @@ class CheckoutScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Entrega:"),
+                      Text(AppLocalizations.of(context)!.delivery_),
                       Text(
                         "R\$ 6,00",
                         style: TextStyle(color: AppColors.lightMainColor),
@@ -151,7 +155,7 @@ class CheckoutScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Total:"),
+                      Text(AppLocalizations.of(context)!.total_),
                       Text(
                         "R\$ ${(bagProvider.getTotal() + 6.0).toStringAsFixed(2).replaceAll(".", ",")}",
                         style: TextStyle(
@@ -172,10 +176,15 @@ class CheckoutScreen extends StatelessWidget {
                                 bagProvider.clearBag();
                                 showImageBottomSheet(
                                   context: context,
-                                  imagePath: "assets/others/cooking.png",
-                                  title: "Pedido realizado!",
+                                  imagePath: 'assets/others/cooking.png',
+                                  title:
+                                      AppLocalizations.of(
+                                        context,
+                                      )!.orderConfirmed,
                                   description:
-                                      "Seu pedido foi realizado com sucesso e já está sendo preparado pelo restaurante!",
+                                      AppLocalizations.of(
+                                        context,
+                                      )!.textOrderConfirmed,
                                   onConfirm: () {
                                     Navigator.pop(context);
                                   },
@@ -188,7 +197,7 @@ class CheckoutScreen extends StatelessWidget {
                         children: [
                           Icon(Icons.wallet, color: AppColors.backgroundColor),
                           Text(
-                            "Pedir",
+                            AppLocalizations.of(context)!.orderNow,
                             style: TextStyle(
                               color: AppColors.backgroundColor,
                               fontSize: 16.0,
