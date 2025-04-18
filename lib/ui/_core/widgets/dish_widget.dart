@@ -42,7 +42,7 @@ class DishWidget extends StatelessWidget {
           ),
           title: Text(dish.name, style: TextStyle(fontWeight: FontWeight.w500)),
           subtitle: Text(
-            "R\$${dish.price.toStringAsFixed(2).replaceAll(".", ",")}",
+            "R\$ ${dish.price.toStringAsFixed(2).replaceAll(".", ",")}",
           ),
           trailing:
               quantity == 0

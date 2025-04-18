@@ -19,9 +19,17 @@ class BagProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  cleaBag() {
+  void clearBag() {
     dishesOnBag.clear();
     notifyListeners();
+  }
+
+  double getTotal() {
+    double total = 0;
+    for (Dish dish in dishesOnBag) {
+      total += dish.price;
+    }
+    return total;
   }
 
   Map<Dish, int> getMapByAmount() {
