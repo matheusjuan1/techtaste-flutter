@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="Logo Nearby" height="100px" src="./assets/logo.png" />
+  <img alt="Logo TechTaste" height="100px" src="./assets/logo.png" />
 </h1>
 
 # TechTaste
