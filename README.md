@@ -16,13 +16,13 @@ Projeto desenvolvido durante a Imersão Mobile, oferecida pela [Alura](https://w
     <img src="https://img.shields.io/badge/-Flutter-02569B?logo=flutter&logoColor=white" />
   </a>
   <a href="https://pub.dev/packages/provider">
-    <img src="https://img.shields.io/badge/provider-6.1.4-brightgreen">
+    <img src="https://img.shields.io/badge/provider-v6.1.4-brightgreen">
   </a>
   <a href="https://pub.dev/packages/badges">
-    <img src="https://img.shields.io/badge/badges-3.1.2-blueviolet">
+    <img src="https://img.shields.io/badge/badges-v3.1.2-blueviolet">
   </a>
   <a href="https://pub.dev/packages/intl">
-    <img src="https://img.shields.io/badge/intl-0.19.0-orange">
+    <img src="https://img.shields.io/badge/intl-v0.19.0-orange">
   </a>
 </div>
 
