@@ -10,19 +10,19 @@ Projeto desenvolvido durante a Imersão Mobile, oferecida pela [Alura](https://w
 
 <div align="center">
   <a href="https://dart.dev/">
-    <img src="https://img.shields.io/badge/-Dart-0175C2?logo=dart&logoColor=white" />
+    <img src="https://img.shields.io/badge/Dart-0175C2?logo=dart&logoColor=white" alt="Badge de Dart" />
   </a>
   <a href="https://flutter.dev/">
-    <img src="https://img.shields.io/badge/-Flutter-02569B?logo=flutter&logoColor=white" />
+    <img src="https://img.shields.io/badge/Flutter-02569B?logo=flutter&logoColor=white" alt="Badge de Flutter" />
   </a>
   <a href="https://pub.dev/packages/provider">
-    <img src="https://img.shields.io/badge/provider-v6.1.4-brightgreen">
+    <img src="https://img.shields.io/badge/Provider-v6.1.4-brightgreen" alt="Badge de Provider" />
   </a>
   <a href="https://pub.dev/packages/badges">
-    <img src="https://img.shields.io/badge/badges-v3.1.2-blueviolet">
+    <img src="https://img.shields.io/badge/Badges-v3.1.2-blueviolet" alt="Badge de Badges" />
   </a>
   <a href="https://pub.dev/packages/intl">
-    <img src="https://img.shields.io/badge/intl-v0.19.0-orange">
+    <img src="https://img.shields.io/badge/Intl-v0.19.0-orange" alt="Badge de Intl" />
   </a>
 </div>
 
@@ -36,7 +36,7 @@ O layout completo e o Style Guide da aplicação estão disponíveis no Figma:
 
 ### 🤖 Android
 
-Veja algumas capturas de tela do aplicativo em funcionamento no Android. A versão para iOS estará disponível em breve,
+Veja algumas capturas de tela do aplicativo em funcionamento no Android. A versão para iOS estará disponível em breve.
 
 <details>
   <summary><strong>Ver capturas de tela Android</strong></summary>
