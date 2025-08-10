@@ -10,21 +10,27 @@ Projeto desenvolvido durante a Imersão Mobile, oferecida pela [Alura](https://w
 
 <div align="center">
   <a href="https://dart.dev/">
-    <img src="https://img.shields.io/badge/Dart-0175C2?logo=dart&logoColor=white" alt="Badge de Dart" />
+    <img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white" alt="Badge de Dart" />
   </a>
   <a href="https://flutter.dev/">
-    <img src="https://img.shields.io/badge/Flutter-02569B?logo=flutter&logoColor=white" alt="Badge de Flutter" />
+    <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" alt="Badge de Flutter" />
   </a>
   <a href="https://pub.dev/packages/provider">
-    <img src="https://img.shields.io/badge/Provider-v6.1.4-brightgreen" alt="Badge de Provider" />
+    <img src="https://img.shields.io/badge/Provider-v6.1.4-brightgreen?style=for-the-badge" alt="Badge de Provider" />
   </a>
   <a href="https://pub.dev/packages/badges">
-    <img src="https://img.shields.io/badge/Badges-v3.1.2-blueviolet" alt="Badge de Badges" />
+    <img src="https://img.shields.io/badge/Badges-v3.1.2-blueviolet?style=for-the-badge" alt="Badge de Badges" />
   </a>
   <a href="https://pub.dev/packages/intl">
-    <img src="https://img.shields.io/badge/Intl-v0.19.0-orange" alt="Badge de Intl" />
+    <img src="https://img.shields.io/badge/Intl-v0.19.0-orange?style=for-the-badge" alt="Badge de Intl" />
   </a>
 </div>
+
+## 🚀 Funcionalidades
+
+- **Navegar por restaurantes e cardápios**: Explore diferentes opções de comida.
+- **Gerenciar a sacola**: Adicione, remova e visualize itens antes de finalizar o pedido.
+- **Processo de checkout**: Simule a finalização da compra.
 
 ## 🎨 Layout
 
